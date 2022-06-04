@@ -34,6 +34,7 @@ const Container = styled.div`
   font-size: 35pt;
   color: black;
   text-align: center;
+  height: 1200px;
 `;
 
 const Admin = () => {
