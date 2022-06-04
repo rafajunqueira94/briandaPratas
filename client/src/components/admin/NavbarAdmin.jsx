@@ -85,17 +85,26 @@ const NavbarAdminHome = () => {
         </Left>
         <Center>
           <StyledA>
-            <Link style={{ textDecoration: "none" }} to="/Admin/Product">
+            <Link
+              style={{ textDecoration: "none", color: "black" }}
+              to="/Admin/Product"
+            >
               Produtos
             </Link>
           </StyledA>
           <StyledA>
-            <Link style={{ textDecoration: "none" }} to="/Admin/Customer">
+            <Link
+              style={{ textDecoration: "none", color: "black" }}
+              to="/Admin/Customer"
+            >
               Clientes
             </Link>
           </StyledA>
           <StyledA>
-            <Link style={{ textDecoration: "none" }} to="/Admin/User">
+            <Link
+              style={{ textDecoration: "none", color: "black" }}
+              to="/Admin/User"
+            >
               Usuários
             </Link>
           </StyledA>

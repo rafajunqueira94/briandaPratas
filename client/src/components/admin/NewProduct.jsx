@@ -66,6 +66,8 @@ export default class NewProduct extends Component {
       .catch((error) => {
         console.log(error);
       });
+
+
   };
 
   render() {

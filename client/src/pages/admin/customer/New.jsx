@@ -2,7 +2,7 @@ import React from "react";
 import Header from "../../../components/Header";
 import NavbarAdminHome from "../../../components/admin/NavbarAdmin";
 import NewCustomer from "../../../components/admin/NewCustomer";
-import ProductGrid from "../../../components/admin/GridProduct";
+import CustomerGrid from "../../../components/admin/GridCustomer";
 import Footer from "../../../components/Footer";
 import styled from "styled-components";
 // import Products from "../components/Products";
@@ -21,7 +21,7 @@ const AdminNewProduct = () => {
       <NavbarAdminHome />
       <NewCustomer />
       <Container>
-        <ProductGrid />
+        <CustomerGrid />
       </Container>
       <Footer />
     </>

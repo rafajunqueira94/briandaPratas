@@ -42,14 +42,11 @@ userCreateNew = async (req, res) => {
 
 userDeleteById = async (req, res) => {
   console.group("Deletar usuário por ID");
-  if (!movie) {
-    return res.status(404).json({ success: false, error: `Movie not found` });
-  }
   try {
     const user = await User.findOneAndDelete({ _id: req.params.id });
     res.json(user);
   } catch (err) {
-    res.status(400).json({ success: false, error: err });
+    res.send("Error get user " + err);
   }
 };
 

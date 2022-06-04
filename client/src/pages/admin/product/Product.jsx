@@ -34,7 +34,7 @@ const Container = styled.div`
   font-size: 35pt;
   color: black;
   text-align: center;
-  height: 1200px;
+  height: min-content;
 `;
 
 const Admin = () => {
@@ -45,7 +45,7 @@ const Admin = () => {
       <NavbarAdminHome />
       <ContainerButtons>
         <Link style={{ textDecoration: "none" }} to="/Admin/Product/New">
-          <div style={{ display: "flex", justifyContent: "center" }}></div>
+          <div style={{ display: "flex", justifyContent: "center", alignContent: "center" }}></div>
           <StyledButton>Novo Produto</StyledButton>
         </Link>
       </ContainerButtons>
