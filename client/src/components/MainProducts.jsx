@@ -126,13 +126,12 @@ const Arrow = styled.div`
 
 const MainProducts = () => {
   const [listOfProducts, setListOfProducts] = useState([]);
-  const [slideIndex, setSlideIndex] = useState();
+  const [slideIndex, setSlideIndex] = useState(0);
 
   useEffect(() => {
     Axios.get("http://localhost:4000/product")
       .then((response) => {
         setListOfProducts(response.data);
-        setSlideIndex(response.data.length);
       })
       .catch((err) => console.log(err));
   }, []);
@@ -141,7 +140,7 @@ const MainProducts = () => {
     if (direction === "left") {
       setSlideIndex(slideIndex > 0 ? slideIndex - 1 : 2);
     } else {
-      setSlideIndex(slideIndex <= 1 ? slideIndex + 1 : 0);
+      setSlideIndex(slideIndex < 2 ? slideIndex + 1 : 0);
     }
   };
 
@@ -158,8 +157,8 @@ const MainProducts = () => {
               <Circle />
               <Image
                 src={product.img}
-                id={product._id}
                 key={product._id}
+                id={product._id}
                 alt="Imagem do produto"
               />
               <Info>
