@@ -27,6 +27,8 @@ export default class NewProduct extends Component {
       hasDiscount: 0,
       category: "",
       stockCount: 0,
+      rating: 0,
+      ratingCount: 0,
     };
   }
 
@@ -47,6 +49,8 @@ export default class NewProduct extends Component {
       hasDiscount,
       category,
       stockCount,
+      rating,
+      ratingCount,
     } = this.state;
 
     Axios.post("http://localhost:4000/product/new", {
@@ -59,15 +63,17 @@ export default class NewProduct extends Component {
       hasDiscount: hasDiscount,
       category: category,
       stockCount: stockCount,
+      ratingCount: 0,
+      rating: 0,
     })
       .then((response) => {
         console.log(response);
+        alert("Produto cadastrado com sucesso");
       })
       .catch((error) => {
+        alert("Erro no cadastro de produto. Contate o Administrador");
         console.log(error);
       });
-
-
   };
 
   render() {
@@ -203,12 +209,12 @@ export default class NewProduct extends Component {
               </Form.Group>
             </Row>
             <Row className="mb-3">
-              <Form.Group as={Col} controlId="data">
-                <Form.Label for="data">IMAGEM DO PRODUTO (URL) </Form.Label>
+              <Form.Group as={Col} controlId="img">
+                <Form.Label for="img">IMAGEM DO PRODUTO (URL) </Form.Label>
                 <Form.Control
                   placeholder="Imagem do produto"
-                  name="data"
-                  id="data"
+                  name="img"
+                  id="img"
                   onChange={this.handleChange}
                 />
               </Form.Group>

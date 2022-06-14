@@ -45,11 +45,16 @@ const Admin = () => {
       <NavbarAdminHome />
       <ContainerButtons>
         <Link style={{ textDecoration: "none" }} to="/Admin/Product/New">
-          <div style={{ display: "flex", justifyContent: "center", alignContent: "center" }}></div>
+          <div
+            style={{
+              display: "flex",
+              justifyContent: "center",
+              alignContent: "center",
+            }}
+          ></div>
           <StyledButton>Novo Produto</StyledButton>
         </Link>
       </ContainerButtons>
-
       <Container>
         <ProductGrid />
       </Container>

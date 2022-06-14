@@ -2,7 +2,6 @@ import React from "react";
 import Header from "../../../components/Header";
 import NavbarAdminHome from "../../../components/admin/NavbarAdmin";
 import NewUser from "../../../components/admin/NewUser";
-import UserGrid from "../../../components/admin/GridUser";
 import Footer from "../../../components/Footer";
 import styled from "styled-components";
 // import Products from "../components/Products";
@@ -20,9 +19,6 @@ const AdminNewProduct = () => {
       <Header />
       <NavbarAdminHome />
       <NewUser />
-      <Container>
-        <UserGrid />
-      </Container>
       <Footer />
     </>
   );

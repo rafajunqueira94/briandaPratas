@@ -14,16 +14,18 @@ import {
 export default function CustomDataGrid(item) {
   const [listOfProducts, setListOfProducts] = useState([]);
 
-
   const deleteProduct = (id) => {
     console.log(id);
-    Axios.delete(`http://localhost:4000/product/delete/` + id);
-    Axios.get(`http://localhost:4000/product/`)
-      .then((response) => {
-        setListOfProducts(response.data);
-        console.log(response.data);
-      })
-      .catch((err) => console.log(err));
+    if (Axios.delete(`http://localhost:4000/product/delete/` + id)) {
+      Axios.get(`http://localhost:4000/product/`)
+        .then((response) => {
+          setListOfProducts(response.data);
+          alert("Produto excluído com sucesso.")
+        })
+        .catch((err) => console.log(err));
+    } else{
+      alert("Erro na exclusão do produto. Contate o Administrador.")
+    }
   };
 
   useEffect(() => {

@@ -80,7 +80,7 @@ export default function CustomDataGrid(item) {
                 }
               </TableCell>{" "}
               <TableCell>{customer._id}</TableCell>
-              <TableCell>{customer.isActive}</TableCell>
+              <TableCell>{customer.isActive ? "Sim" : "Não"}</TableCell>
               <TableCell>{customer.name}</TableCell>
               <TableCell>{customer.email}</TableCell>
               <TableCell>{customer.phone}</TableCell>

@@ -1,5 +1,8 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import styled from "styled-components";
+import Axios from "axios";
+import HomeLoggedIn from "../components/admin/NavbarAdminLoggedIn";
+import { Navigate } from "react-router";
 
 const Container = styled.div`
   display: block;
@@ -53,22 +56,20 @@ const LoginForm = () => {
   // React States
   const [errorMessages, setErrorMessages] = useState({});
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [listOfUsers, setListOfUsers] = useState();
 
-  // User Login info
-  const database = [
-    {
-      username: "user1",
-      password: "pass1",
-    },
-    {
-      username: "user2",
-      password: "pass2",
-    },
-  ];
+  useEffect(() => {
+    Axios.get("http://localhost:4000/user")
+      .then((response) => {
+        setListOfUsers(response.data);
+        console.log(response);
+      })
+      .catch((err) => console.log(err));
+  }, []);
 
   const errors = {
-    uname: "invalid username",
-    pass: "invalid password",
+    uname: "Login não encontrado",
+    pass: "Senha incorreta",
   };
 
   const handleSubmit = (event) => {
@@ -78,8 +79,7 @@ const LoginForm = () => {
     var { uname, pass } = document.forms[0];
 
     // Find user login info
-    const userData = database.find((user) => user.username === uname.value);
-
+    const userData = listOfUsers.find((user) => user.login === uname.value);
     // Compare user info
     if (userData) {
       if (userData.password !== pass.value) {
@@ -89,7 +89,7 @@ const LoginForm = () => {
         setIsSubmitted(true);
       }
     } else {
-      // Username not found
+      // login not found
       setErrorMessages({ name: "uname", message: errors.uname });
     }
   };
@@ -125,7 +125,7 @@ const LoginForm = () => {
     <>
       <Container>
         <StyledTitle>Login</StyledTitle>
-        {isSubmitted ? <div>User is successfully logged in</div> : renderForm}
+        {isSubmitted ? <Navigate to="/admin/home/logged" /> : renderForm}
       </Container>
     </>
   );

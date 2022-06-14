@@ -67,9 +67,11 @@ export default class NewCustomer extends Component {
       registered: registered,
     })
       .then((response) => {
+        alert("Cliente cadastrado com sucesso");
         console.log(response);
       })
       .catch((error) => {
+        alert("Erro no cadastrado do cliente. Contate o Administrador.");
         console.log(error);
       });
   };
@@ -171,7 +173,7 @@ export default class NewCustomer extends Component {
               <Form.Group className="mb-3">
                 <Form.Label>ENDEREÇO</Form.Label>
                 <Form.Control
-                  placeholder="00.000-000"
+                  placeholder=""
                   name="address"
                   id="address"
                   onChange={this.handleChange}

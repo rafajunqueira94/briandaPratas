@@ -50,8 +50,10 @@ export default class NewUser extends Component {
     })
       .then((response) => {
         console.log(response);
+        alert("Usuário cadastrado com sucesso")
       })
       .catch((error) => {
+        alert("Erro no cadastrado do usuário. Contate o Administrador.")
         console.log(error);
       });
   };

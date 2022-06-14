@@ -26,7 +26,7 @@ const Wrapper = styled.div`
   display: flex;
   flex-wrap: wrap;
   width: 94vw;
-  height: 30vw;
+  height: 40vw;
   background-color: white;
   align-items: center;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
@@ -38,6 +38,7 @@ const Wrapper = styled.div`
 
 const NewContainer = styled.div`
   display: block;
+  margin-top: 40px;
 `;
 
 const Button = styled.button`
@@ -75,6 +76,7 @@ const StyledButtonShipping = styled(Button)`
   background-color: white;
   color: #39acd6;
   width: 150px;
+  margin-bottom: 0;
 `;
 
 const ContainerStarRating = styled.div`
@@ -171,7 +173,7 @@ export const Product = ({ item }) => {
               </span>
             </ContainerStarRating>
           </NewContainer>
-          <NewContainer style={{ display: "inline-flex" }}>
+          <NewContainer style={{ display: "inline-flex", marginTop: "0" }}>
             <StyledButtonCart>
               <ShoppingCartOutlined /> Comprar
             </StyledButtonCart>

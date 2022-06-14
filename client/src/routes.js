@@ -9,6 +9,7 @@ import AdminUser from "./pages/admin/user/User";
 import NewProduct from "./pages/admin/product/New";
 import NewCustomer from "./pages/admin/customer/New";
 import NewUser from "./pages/admin/user/New";
+import AdminHomeLogin from "./pages/admin/HomeLoggedIn";
 import { Route, Routes } from "react-router-dom";
 
 const Routers = () => {
@@ -20,6 +21,7 @@ const Routers = () => {
         <Route path="/product/onsale" element={<OnSale />}></Route>
 
         <Route path="/admin/home" element={<AdminHome />}></Route>
+        <Route path="/admin/home/logged" element={<AdminHomeLogin />}></Route>
         <Route path="/admin/product" element={<AdminProduct />}></Route>
         <Route path="/admin/product/new" element={<NewProduct />}></Route>
         <Route path="/admin/customer" element={<AdminCustomer />}></Route>

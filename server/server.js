@@ -18,9 +18,10 @@ const productRoutes = require("./api/routes/productRoutes");
 const customerRoutes = require("./api/routes/customerRoutes");
 
 mongoose.connect(
-  "mongodb+srv://dbUser:Bf7C2Cs0x8NEfaSP@cluster0.br4dq.mongodb.net/briandaPratas?retryWrites=true&w=majority"
+  "mongodb+srv://dbUser:5BhR0QPZJ5z0zzLP@cluster0.jak6v.mongodb.net/briandaPratas?retryWrites=true&w=majority"
 );
 
+// "mongodb+srv://dbUser:Bf7C2Cs0x8NEfaSP@cluster0.br4dq.mongodb.net/briandaPratas?retryWrites=true&w=majority"
 // ***
 // app.use("/", productRoutes);
 
